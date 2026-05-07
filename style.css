@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Share+Tech+Mono&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#06060f;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;overflow:hidden;font-family:'Share Tech Mono',monospace;color:#ccc;user-select:none;}
+body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,245,255,0.012) 2px,rgba(0,245,255,0.012) 4px);pointer-events:none;z-index:100;}
+
+#wrap{display:flex;flex-direction:column;align-items:center;gap:0;}
+
+#hud{width:900px;display:flex;justify-content:space-between;align-items:center;padding:6px 14px;background:#0d0d1f;border:1px solid #1a1a3a;border-bottom:none;}
+.hlabel{font-size:10px;color:#444;letter-spacing:2px;text-transform:uppercase;}
+.hval{font-family:'Orbitron',monospace;font-size:15px;font-weight:700;color:#00f5ff;}
+
+#ghosts{display:flex;gap:5px;align-items:center;}
+.gdot{width:9px;height:9px;border-radius:50%;background:#222;transition:all .3s;}
+.gdot.on{box-shadow:0 0 6px currentColor;}
+
+#cbox{position:relative;border:1px solid #1a1a3a;box-shadow:0 0 40px rgba(0,245,255,0.06);}
+canvas{display:block;}
+
+#ov{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(6,6,15,0.92);backdrop-filter:blur(3px);z-index:10;}
+#ov.hide{display:none;}
+
+.otitle{font-family:'Orbitron',monospace;font-size:40px;font-weight:900;letter-spacing:5px;margin-bottom:8px;}
+.cyan{color:#00f5ff;text-shadow:0 0 18px #00f5ff;animation:glitch 3s infinite;}
+.red{color:#ff3355;text-shadow:0 0 18px #ff3355;}
+.green{color:#00ff88;text-shadow:0 0 18px #00ff88;}
+
+@keyframes glitch{
+  0%,88%,100%{transform:none;}
+  89%{transform:translate(-3px,0) skewX(-4deg);text-shadow:3px 0 #ff00aa,-3px 0 #aaff00;}
+  91%{transform:translate(3px,0) skewX(4deg);}
+  93%{transform:none;}
+}
+
+.osub{color:#555;font-size:13px;letter-spacing:1px;margin-bottom:28px;text-align:center;line-height:2;}
+.osub span{color:#00f5ff;}
+
+.btn{font-family:'Share Tech Mono',monospace;font-size:14px;letter-spacing:3px;padding:11px 34px;border:1px solid #00f5ff;background:transparent;color:#00f5ff;cursor:pointer;transition:all .2s;margin:4px;}
+.btn:hover{background:#00f5ff;color:#06060f;}
+.dbtn{border-color:#555;color:#555;}
+.dbtn:hover{background:#555;color:#06060f;}
+
+#hint{width:900px;display:flex;justify-content:space-between;padding:5px 14px;background:#0d0d1f;border:1px solid #1a1a3a;border-top:none;font-size:10px;color:#333;letter-spacing:1px;}
+kbd{background:#1a1a2e;border:1px solid #2a2a4a;padding:1px 5px;border-radius:3px;color:#888;font-size:10px;margin:0 2px;}
